@@ -1,0 +1,86 @@
+.forecast
+            {
+                margin: 0;
+                padding: .3rem;
+                background-color: #eee;
+                font: 1rem 'Fira Sans', sana-serif;
+            }
+            .forecast > h1, .day-forecast
+            {
+                margin: .5rem;
+                padding: .3rem;
+                font-size: 1.2rem;
+            }
+            .day-forecast
+            {
+                background: right/contain content-box border-box no-repeat url(/home/aspire2098/Desktop/HTML/assets/images/sunny.svg) white;
+            }
+            .day-forecast > h2, .day-forecast > p
+            {
+                margin: .2rem;
+                font-size: 1rem;
+            }
+            aside
+            {
+                width: 40%;
+                padding-left: .5rem;
+                margin-left: .5rem;
+                float:right;
+                box-shadow: inset 5px 0 5px -5px #29627e;
+                font-style: italic;
+                color: #29627e;
+            }
+            aside > p
+            {
+                margin: .5rem;
+            }
+            p
+            {
+                font-family: 'Fira Sans', sans-serif;
+            }
+            details
+            {
+                border: 1px solid #aaa;
+                border-radius: 4px;
+                padding: .5rem .5rem 0;
+            }
+            summary
+            {
+                font-weight: bold;
+                margin: -.5rem -.5rem 0;
+                padding: .5rem;
+            }
+            details[open]
+            {
+                padding: .5rem;
+            }
+            details[open] summary
+            {
+                border-bottom: 1px solid #aaa;
+                margin-bottom: .5rem;
+            }
+            header
+            {
+                font: bold calc(.025*(100vw)) 'Arial',sans-serif;
+            }
+            nav
+            {
+                border-bottom: 1px solid black;
+            }
+            .crumbs ol
+            {
+                list-style-type: none;
+                padding-left: 0;
+            }
+            .crumb
+            {
+                display: inline-block;
+            }
+            .crumb a::after{
+                display: inline-block;
+                color: #000;
+                content: '>';
+                font-size: 80%;
+                font-weight: bold;
+                padding: 0 30px;
+            }
