@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form - validation</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <body>
+        <div class="wrapper">
+            <h1>Interview Registration form</h1>
+            <form action="">
+                <div>
+                    <label for="fname">Your first name</label>
+                    <input type="text" placeholder="Your first name" id="fname">
+                </div>
+                <div>
+                    <label for="lname">Your last name</label>
+                    <input type="text" placeholder="Your last name" id="lname">
+                </div>
+                <div>
+                    <label for="gender">Gender</label>
+                    <input type="radio" name="gender">Male <br>
+                    <input type="radio" name="gender">Female <br>
+                    <input type="radio" name="gender">Others <br>
+                </div>
+                <div>
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob">
+                </div>
+                <div>
+                    <label for="language">Language Known</label>
+                    <input type="checkbox" name="language">English <br>
+                    <input type="checkbox" name="language">Tamil <br>
+                    <input type="checkbox" name="language">German <br>
+                    <input type="checkbox" name="language">French <br>
+                </div>
+                <div>
+                    <label for="mno">Your contact number</label>
+                    <input type="tel" name="mobile-number" id="mno" placeholder="Your contact number">
+                </div>
+                <div>
+                    <label for="email">Your E-mail address</label>
+                    <input type="email" name="email" id="email" placeholder="Your E-mail address">
+                </div>
+                <div>
+                    <label for="nationality">nationality</label>
+                    <input list="country-list" id="nationality" name="nationality">
+                    <datalist id="country-list">
+                        <option value="France">France</option>
+                        <option value="United States">United States</option>
+                        <option value="China">China</option>
+                        <option value="Spain">Spain</option>
+                        <option value="Italy">Italy</option>
+                        <option value="India">India</option>
+                        <option value="Turkey">Turkey</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Russian Federation">Russian Federation</option>
+                        <option value="Malaysia">Malaysia</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="Austria">Austria</option>
+                        <option value="Hong Kong"></option>
+                        <option value="Saudi Arabia">Saudi Arabia</option>
+                    </datalist>
+                </div>
+                <div>
+                    <label for="course">Education Qualification</label>
+                    <select name="course" id="course">
+                        <option value="select">select</option>
+                        <option value="BE - CSE">BE - CSE</option>
+                        <option value="BE - ECE">BE - ECE</option>
+                        <option value="BE - EEE">BE - EEE</option>
+                        <option value="BE - Mech">BE - Mech</option>
+                        <option value="BE - Civil">BE - Civil</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="project-title">Your project title</label>
+                    <input type="text" id="project-title" name="project-title" placeholder="Your project title">
+                </div>
+                <div>
+                    <label for="project-description">A few words about ypur project</label>
+                    <textarea name="project-description" id="project-description" cols="30" rows="10"></textarea>
+                </div>
+                <div>
+                    <label for="java">Your Knowledge in Java</label>
+                    <input type="range" name="java" id="java" max="100" min="0" step="10">
+                </div>
+                <div>
+                    <label for="resume">Upload your resume</label>
+                    <input type="file" name="resume" id="resume">
+                </div>
+                <div>
+                    <label for="drive-link">Drive link</label>
+                    <input type="url" name="drive-link" id="drive-link" placeholder="Drive link">
+                </div>
+                    <input type="submit" value="Submit">
+
+            </form>
+        </div>
+    </body>
+</html>
