@@ -6,43 +6,50 @@
     <body>
         <div class="wrapper">
             <h1>Interview Registration form</h1>
-            <form action="">
+            <form action="" id="form" method = 'POST'>
                 <div>
                     <label for="fname">Your first name</label>
-                    <input type="text" placeholder="Your first name" id="fname">
+                    <input type="text" placeholder="Your first name" id="fname" class="input"> 
+                    <div class="alert-box"><span></span><i>X</i></div>
                 </div>
                 <div>
                     <label for="lname">Your last name</label>
-                    <input type="text" placeholder="Your last name" id="lname">
+                    <input type="text" placeholder="Your last name" id="lname" class="input">
+                    <div class="alert-box"><span></span><i>X</i></div>
                 </div>
                 <div>
                     <label for="gender">Gender</label>
                     <input type="radio" name="gender">Male <br>
                     <input type="radio" name="gender">Female <br>
                     <input type="radio" name="gender">Others <br>
+                    <div class="alert-box"><span></span><i>X</i></div>
                 </div>
                 <div>
                     <label for="dob">Date of Birth</label>
-                    <input type="date" id="dob">
+                    <input type="date" id="dob" class="input">
+                    <div class="alert-box"><span></span><i>X</i></div>
                 </div>
                 <div>
                     <label for="language">Language Known</label>
-                    <input type="checkbox" name="language">English <br>
                     <input type="checkbox" name="language">Tamil <br>
+                    <input type="checkbox" name="language">English <br>
                     <input type="checkbox" name="language">German <br>
                     <input type="checkbox" name="language">French <br>
+                    <div class="alert-box"><span></span><i>X</i></div>
                 </div>
                 <div>
                     <label for="mno">Your contact number</label>
-                    <input type="tel" name="mobile-number" id="mno" placeholder="Your contact number">
+                    <input type="tel" name="mobile-number" id="mno" placeholder="Your contact number" class="input">
+                    <div class="alert-box"><span></span><i>X</i></div>
                 </div>
                 <div>
                     <label for="email">Your E-mail address</label>
-                    <input type="email" name="email" id="email" placeholder="Your E-mail address">
+                    <input type="email" name="email" id="email" placeholder="Your E-mail address"  class="input">
+                    <div class="alert-box"><span></span><i>X</i></div>
                 </div>
                 <div>
                     <label for="nationality">nationality</label>
-                    <input list="country-list" id="nationality" name="nationality">
+                    <input list="country-list" id="nationality" name="nationality" class="input">
                     <datalist id="country-list">
                         <option value="France">France</option>
                         <option value="United States">United States</option>
@@ -57,13 +64,14 @@
                         <option value="Malaysia">Malaysia</option>
                         <option value="Mexico">Mexico</option>
                         <option value="Austria">Austria</option>
-                        <option value="Hong Kong"></option>
+                        <option value="Hong Kong">Hong Kong</option>
                         <option value="Saudi Arabia">Saudi Arabia</option>
                     </datalist>
+                    <div class="alert-box"><span></span><i>X</i></div>
                 </div>
                 <div>
                     <label for="course">Education Qualification</label>
-                    <select name="course" id="course">
+                    <select name="course" id="course" class="input">
                         <option value="select">select</option>
                         <option value="BE - CSE">BE - CSE</option>
                         <option value="BE - ECE">BE - ECE</option>
@@ -71,6 +79,7 @@
                         <option value="BE - Mech">BE - Mech</option>
                         <option value="BE - Civil">BE - Civil</option>
                     </select>
+                    <div class="alert-box"><span></span><i>X</i></div>
                 </div>
                 <div>
                     <label for="project-title">Your project title</label>
@@ -86,15 +95,17 @@
                 </div>
                 <div>
                     <label for="resume">Upload your resume</label>
-                    <input type="file" name="resume" id="resume">
+                    <input type="file" name="resume" id="resume" class="input">
+                    <div class="alert-box"><span></span><i>X</i></div>
                 </div>
                 <div>
                     <label for="drive-link">Drive link</label>
-                    <input type="url" name="drive-link" id="drive-link" placeholder="Drive link">
+                    <input type="url" name="drive-link" id="drivelink" placeholder="Drive link" class="input">
+                    <div class="alert-box"><span></span><i>X</i></div>
                 </div>
-                    <input type="submit" value="Submit">
-
+                    <input type="submit" value="Submit" id="btn" class="input">
             </form>
         </div>
+        <script src="assets/index.js"></script>
     </body>
 </html>
