@@ -122,14 +122,15 @@ body
     margin: .5rem;
     min-width: 300px;
     min-height: 30px;
-    border: 1px solid green;
     border-radius: .5rem;
     padding: .5rem;
-    background-color: rgba(0, 255 , 0, 0.1);
-    color: green;
 }
 .alert-box i
 {
     cursor: pointer;
 }
 
+#project-description
+{
+    resize: none;
+}

@@ -36,7 +36,7 @@ lname.onchange = (event) => {
         sibling.style.display = 'flex';
         sibling.style.backgroundColor = 'rgba(255,0,0,0.1)';
         sibling.style.border = '2px solid red';
-        sibling.style.color = 'red';
+        sibling.style.color = '	ICIC0001912red';
         sibling.firstElementChild.textContent = 'Name should contains only characters.';
         lastName.value = '';
         sibling.firstElementChild.nextElementSibling.onclick = (event) =>{
@@ -123,7 +123,7 @@ email.onchange = (event) => {
 };
 
 drivelink.onchange = (event) => {
-    var pattern = /^https:\/\/drive.google.com\/file\/[A-Za-z0-9%*-_?]{5,}$/;
+    var pattern = /^https:\/\/drive.google.com\/file\/[A-Za-z0-9]{5,}$/;
     var url = event.target;
     var sibling = url.nextElementSibling;
     if(pattern.test(url.value))
@@ -139,10 +139,6 @@ drivelink.onchange = (event) => {
         sibling.style.border = '2px solid red';
         sibling. firstElementChild.textContent = 'Invalid URL';
         url.value='';
-        sibling.firstElementChild.nextElementSibling.onclick = (event) =>{
-            var instance = event.target;
-            instance.parentElement.style.display = 'none';
-        };
     }
 };
 
