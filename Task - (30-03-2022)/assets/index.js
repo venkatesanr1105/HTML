@@ -1,49 +1,23 @@
-fname.onchange = (event) => {
-    var pattern = /^[A-za-z]{4,}$/;
-    var firstName = event.target;
-    var sibling = firstName.nextElementSibling;
-    if(pattern.test(firstName.value))
+function validations(pattern, inputData, errorMessage) {
+    var sibling = inputData.nextElementSibling;
+    if(pattern.test(inputData.value))
     {
-        firstName.style.backgroundColor= 'rgba(0,255,0,0.1)';
-        firstName.style.border = '2px solid green'; 
+        inputData.style.backgroundColor= 'rgba(0,255,0,0.1)';
+        inputData.style.border = '2px solid green'; 
     }
     else
     {
-        sibling.style.display = 'flex';
-        sibling.style.backgroundColor = 'rgba(255,0,0,0.1)';
-        sibling.style.border = '2px solid red';
-        sibling.style.color = 'red';
-        sibling.firstElementChild.textContent = 'Name should contains only characters.';
-        firstName.value = '';
-        sibling.firstElementChild.nextElementSibling.onclick = (event) =>{
-            var instance = event.target;
-            instance.parentElement.style.display = 'none';
-        };
+        displayWarning(sibling, errorMessage);
+        inputData.value = '';
     }
 };
 
+fname.onchange = (event) => {
+    validations(/^[A-za-z]{4,}$/,event.target,'Name should contains only characters.');
+};
+
 lname.onchange = (event) => {
-    var pattern = /^[A-za-z]{4,}$/;
-    var lastName = event.target;
-    var sibling = lastName.nextElementSibling;
-    if(pattern.test(lastName.value))
-    {
-        lastName.style.backgroundColor= 'rgba(0,255,0,0.1)';
-        lastName.style.border = '2px solid green'; 
-    }
-    else
-    {
-        sibling.style.display = 'flex';
-        sibling.style.backgroundColor = 'rgba(255,0,0,0.1)';
-        sibling.style.border = '2px solid red';
-        sibling.style.color = '	ICIC0001912red';
-        sibling.firstElementChild.textContent = 'Name should contains only characters.';
-        lastName.value = '';
-        sibling.firstElementChild.nextElementSibling.onclick = (event) =>{
-            var instance = event.target;
-            instance.parentElement.style.display = 'none';
-        };
-    }
+    validations(/^[A-za-z]{4,}$/,event.target,'Name should contains only characters.');
 };
 
 dob.onchange = (event) => {
@@ -62,83 +36,63 @@ dob.onchange = (event) => {
     }
     else
     {
-        sibling.style.display = 'flex';
-        sibling.style.backgroundColor = 'rgba(255,0,0,0.1)';
-        sibling.style.color = 'red';
-        sibling.style.border = '2px solid red';
-        sibling.firstElementChild.textContent = 'Age should be in between 18 to 60';
+       displayWarning(sibling, 'Age should be between 18 to 60');
         dateofBirth.value='';
-        sibling.firstElementChild.nextElementSibling.onclick = (event) =>{
-            var instance = event.target;
-            instance.parentElement.style.display = 'none';
-        };
     }
 };
 
-mno.onchange = (event) => {
-    var pattern = /^[6789][0-9]{9}$/;
-    var mobileNumber = event.target;
-    var sibling = mobileNumber.nextElementSibling;
-    if(pattern.test(mobileNumber.value))
-    {
-        mobileNumber.style.backgroundColor = 'rgba(0,255,0,0.1)';
-        mobileNumber.style.border = '2px solid green';
-    }
-    else
-    {
-        sibling.style.display = 'flex';
-        sibling.style.backgroundColor = 'rgba(255,0,0,0.1)';
-        sibling.style.color = 'red';
-        sibling.style.border = '2px solid red';
-        sibling.firstElementChild.textContent = 'Mobile should contains only 10 digits';
-        mobileNumber.value='';
-        sibling.firstElementChild.nextElementSibling.onclick = (event) =>{
-            var instance = event.target;
-            instance.parentElement.style.display = 'none';
-        };
-    }};
+mobile.onchange = (event) => {   
+    validations(/^[6789][0-9]{9}/, event.target, 'Mobile should contains only 10 digits');
+}
 
 email.onchange = (event) => {
-    var pattern = /^[A-Za-z0-9]{4,}@[A-Za-z]{3,}\.[A-Za-z]{2,}$/;
-    var email = event.target;
-    var sibling = email.nextElementSibling;
-    if(pattern.test(email.value))
+    validations(/^[A-Za-z0-9]{4,}@[A-Za-z]{3,}\.[A-Za-z]{2,}$/, event.target, 'Email address should be in Example123@domain.com');
+};
+
+projectdescription.oninput = (event) => {
+    if(event.target.value.length > 200)
     {
-        email.style.backgroundColor = 'rgba(0,255,0,0.1)';
-        email.style.border = '2px solid green';
+        displayWarning(event.target.nextElementSibling, 'Paragraph should not exceeds 200 characters');
+        event.target.value = '';
     }
-    else
+};
+
+resume.onchange = (event) => {
+    validations(/(\.jpg|\.png|\.jpeg|\.pdf)$/,event.target,'Not supported file format');
+}
+
+linkedin.onchange = (event) => {
+    validations(/^https:\/\/www\.linkedin\.com\/in\/[A-Za-z]{5,}\-[A-Za-z]{5,}\-[A-Za-z0-9]{5,}$/, event.target, "Couldn't find the link");
+};
+
+function displayWarning(sibling, warningMessage)
+{
+    if(sibling)
     {
         sibling.style.display = 'flex';
         sibling.style.backgroundColor = 'rgba(255,0,0,0.1)';
         sibling.style.color = 'red';
         sibling.style.border = '2px solid red';
-        sibling.firstElementChild.textContent = 'Email address should be in Example123@domain.com';
-        email.value='';
-        sibling.firstElementChild.nextElementSibling.onclick = (event) =>{
+        sibling.firstElementChild.textContent = warningMessage;
+        sibling.firstElementChild.nextElementSibling.onclick = (event)=>{
             var instance = event.target;
-            instance.parentElement.style.display = 'none';
-        };
+            instance.parentElement.style.display='none';
+        }
     }
-};
+}
 
-drivelink.onchange = (event) => {
-    var pattern = /^https:\/\/drive.google.com\/file\/[A-Za-z0-9]{5,}$/;
-    var url = event.target;
-    var sibling = url.nextElementSibling;
-    if(pattern.test(url.value))
-    {
-        url.style.backgroundColor = 'rgba(0,255,0,0.1)';
-        url.style.border = '2px solid green';
-    }
-    else
-    {
-        sibling.style.display = 'flex';
-        sibling.style.backgroundColor = 'rgba(255,0,0,0.1)';
-        sibling.style.color = 'red';
-        sibling.style.border = '2px solid red';
-        sibling. firstElementChild.textContent = 'Invalid URL';
-        url.value='';
-    }
-};
 
+btn1.onclick = (event)=>{
+    var formData = document.getElementsByClassName('input');
+    let flag = true;
+    for(index = 0; index < formData.length;index++)
+    {
+        if(formData[index].value == '')
+        {
+            flag = false;
+            displayWarning(formData[index].nextElementSibling,'Please fill this field');
+        }
+    }
+    if(!flag)
+        event.checked = false;
+}

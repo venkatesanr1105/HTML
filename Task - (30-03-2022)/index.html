@@ -5,11 +5,11 @@
     <link rel="stylesheet" href="assets/style.css">
     <body>
         <div class="wrapper">
-            <h1>Interview Registration form</h1>
-            <form action="" id="form">
+            <form action="welcome.html" id="form" onsubmit="start(event)" method="post">
+                <h1>Job Application Form</h1>
                 <div>
                     <label for="fname">Your first name</label>
-                    <input type="text" placeholder="Your first name" id="fname" class="input"> 
+                    <input type="text" placeholder="Your first name" id="fname" class="input" key = 'fname'>  
                     <div class="alert-box"><span></span><i>X</i></div>
                 </div>
                 <div>
@@ -19,9 +19,9 @@
                 </div>
                 <div>
                     <label for="gender">Gender</label>
-                    <input type="radio" name="gender">Male <br>
-                    <input type="radio" name="gender">Female <br>
-                    <input type="radio" name="gender">Others <br>
+                    <input type="radio" name="gender" class="gen">Male 
+                    <input type="radio" name="gender" class="gen">Female 
+                    <input type="radio" name="gender" class="gen">Others 
                     <div class="alert-box"><span></span><i>X</i></div>
                 </div>
                 <div>
@@ -31,15 +31,15 @@
                 </div>
                 <div>
                     <label for="language">Language Known</label>
-                    <input type="checkbox" name="language">Tamil <br>
-                    <input type="checkbox" name="language">English <br>
-                    <input type="checkbox" name="language">German <br>
-                    <input type="checkbox" name="language">French <br>
+                    <input type="checkbox" name="language">Tamil 
+                    <input type="checkbox" name="language">English 
+                    <input type="checkbox" name="language">German 
+                    <input type="checkbox" name="language">French 
                     <div class="alert-box"><span></span><i>X</i></div>
                 </div>
                 <div>
-                    <label for="mno">Your contact number</label>
-                    <input type="tel" name="mobile-number" id="mno" placeholder="Your contact number" class="input">
+                    <label for="mobile">Your contact number</label>
+                    <input type="tel" name="mobile-number" id="mobile" placeholder="Your contact number" class="input">
                     <div class="alert-box"><span></span><i>X</i></div>
                 </div>
                 <div>
@@ -47,27 +47,29 @@
                     <input type="email" name="email" id="email" placeholder="Your E-mail address"  class="input">
                     <div class="alert-box"><span></span><i>X</i></div>
                 </div>
+            </form>
+            <form>
                 <div>
-                    <label for="nationality">nationality</label>
+                    <label for="nationality">Nationality</label>
                     <input list="country-list" id="nationality" name="nationality" class="input">
-                    <datalist id="country-list">
-                        <option value="France">France</option>
-                        <option value="United States">United States</option>
-                        <option value="China">China</option>
-                        <option value="Spain">Spain</option>
-                        <option value="Italy">Italy</option>
-                        <option value="India">India</option>
-                        <option value="Turkey">Turkey</option>
-                        <option value="United Kingdom">United Kingdom</option>
-                        <option value="Germany">Germany</option>
-                        <option value="Russian Federation">Russian Federation</option>
-                        <option value="Malaysia">Malaysia</option>
-                        <option value="Mexico">Mexico</option>
-                        <option value="Austria">Austria</option>
-                        <option value="Hong Kong">Hong Kong</option>
-                        <option value="Saudi Arabia">Saudi Arabia</option>
-                    </datalist>
                     <div class="alert-box"><span></span><i>X</i></div>
+                    <datalist id="country-list">
+                        <option value="French">France</option>
+                        <option value="American">United States</option>
+                        <option value="Chineese">China</option>
+                        <option value="Spanish">Spain</option>
+                        <option value="Italian">Italy</option>
+                        <option value="Indian">India</option>
+                        <option value="Turkish">Turky</option>
+                        <option value="English">United States</option>
+                        <option value="German">Germany</option>
+                        <option value="Russian">Russian Fedaration</option>
+                        <option value="Malaysian">Malaysia</option>
+                        <option value="Mexican">Mexico</option>
+                        <option value="Austrian">Austria</option>
+                        <option value="cantonese">Hong Kong</option>
+                        <option value="Arabic">Saudi Arabia</option>
+                    </datalist>
                 </div>
                 <div>
                     <label for="course">Education Qualification</label>
@@ -84,14 +86,17 @@
                 <div>
                     <label for="project-title">Your project title</label>
                     <input type="text" id="project-title" name="project-title" placeholder="Your project title">
+                    <div class="alert-box"><span></span><i>X</i></div>
                 </div>
                 <div>
-                    <label for="project-description">A few words about ypur project</label>
-                    <textarea name="project-description" id="project-description" cols="30" rows="10"></textarea>
+                    <label for="projectdescription">A few words about your project</label>
+                    <textarea name="projectdescription" id="projectdescription" cols="40" rows="5"></textarea>
+                    <div class="alert-box"><span></span><i>X</i></div>
                 </div>
                 <div>
                     <label for="java">Your Knowledge in Java</label>
-                    <input type="range" name="java" id="java" max="100" min="0" step="10">
+                    <input type="range" name="java" id="java" max="100" min="0" step="10" value="10" oninput="this.nextElementSibling.value = this.value">
+                    <output>10</output>
                 </div>
                 <div>
                     <label for="resume">Upload your resume</label>
@@ -99,11 +104,12 @@
                     <div class="alert-box"><span></span><i>X</i></div>
                 </div>
                 <div>
-                    <label for="drive-link">Drive link</label>
-                    <input type="url" name="drive-link" id="drivelink" placeholder="Drive link" class="input">
+                    <label for="linkedin">Linkedin profile URL</label>
+                    <input type="url" name="linkedin" id="linkedin" placeholder = "Linkedin profile URL" class = "input">
                     <div class="alert-box"><span></span><i>X</i></div>
                 </div>
-                    <input type="submit" value="Submit" id="btn" class="input">
+                <input type="checkbox" id="btn1"> I hereby declaring the all said details are true upto my knowledge
+                <input type="submit" value="Submit" id="btn" class="input" disabled>
             </form>
         </div>
         <script src="assets/index.js"></script>

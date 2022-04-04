@@ -5,9 +5,8 @@
     font-size: medium;
     font-family: 'Montserrat';
     font-weight: 500;
-    font-style: oblique;
     letter-spacing: 1px;
-    line-height: 2.5;
+    line-height: 1.5;
 }
 
 body
@@ -15,37 +14,34 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #2874F0;
 }
 .wrapper
 {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     border: 1px solid black;
     box-sizing: border-box;
-    width: 70vh;
+    width: 1200px;
     margin: 1rem;
     background-color: white;
     padding: 1rem;
     border-radius: 1rem;
-
+    background-color: rgba(30, 143, 255, 0.1);
 }
     
 
 .wrapper h1
 {
-    font-size: larger;
-    font-size: xx-large;
+    font-size: 30px;
     text-align: center;
     font-weight: bolder;
-    background-color: #FB641B;
+    padding-bottom: 10px;
+    background-color: dodgerblue;
     width: 100%;
-    height: 75px;
+    height: 50px;
     color: white;
     border-radius: .5rem;
-    
 }
 
 .wrapper form
@@ -53,6 +49,7 @@ body
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    width: 496px;
 }
 
 .wrapper form div
@@ -69,7 +66,7 @@ body
 {
     outline: none;
     border: 1px solid lightgray;
-    width: 100%;
+    width: 90%;
     height: 50px;
     border-radius: 1rem;
     padding-left: .5rem;
@@ -96,7 +93,7 @@ body
 {
     outline: none;
     border: 1px solid lightgray;
-    width: 100%;
+    width: 90%;
     height: 50px;
     border-radius: 1rem;
     padding-left: .5rem;
@@ -120,7 +117,7 @@ body
     justify-content: space-between;
     align-items: center;
     margin: .5rem;
-    min-width: 300px;
+    width: 300px;
     min-height: 30px;
     border-radius: .5rem;
     padding: .5rem;
@@ -128,9 +125,15 @@ body
 .alert-box i
 {
     cursor: pointer;
+    padding-left: 1rem;
+    font-weight: 900;
 }
 
-#project-description
+#projectdescription
 {
     resize: none;
+}
+
+.wrapper{
+    column-count: 2;
 }
