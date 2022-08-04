@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Destination</title>
+    </head>
+    <body>
+        <style>
+            body{
+                background-color: rgba(30, 143, 255, 0.25);
+            }
+        </style>
+        <input type="button" value="Paste" id="btn">
+        <script>
+            btn.onclick = () => {
+                const parser = new DOMParser()
+                imageElement = parser.parseFromString(localStorage.getItem('image'),'text/html')
+                document.body.appendChild(imageElement.body.firstElementChild)
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Source</title>
+    </head>
+    <body>
+        <img src="logo.svg" width="300px" height="300px" id="logo">
+        <input type="button" value="Copy" id="btn">
+    </body>
+    <script>
+        btn.onclick = () => {
+            localStorage.setItem('image',logo.cloneNode().outerHTML)
+        }
+    </script>
+</html>

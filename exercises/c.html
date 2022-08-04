@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Product page</title>
+    </head>
+    <body>
+        <style>
+            body{
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                height: 100vh;
+            }
+            div{
+                display: flex;
+                flex-direction: column;
+                align-items:center;
+                justify-content:space-evenly;
+                width: 200px;
+                height: 400px;
+                border: 1px solid lightgray;
+                border-radius:.5rem;
+                box-shadow: 0px 10px 25px lightgray;
+                background-color: rgba(30, 143, 255, 0.25);
+            }
+            input{
+                width: 150px;
+                height: 50px;
+                background-color: dodgerblue;
+                color:white;
+                cursor: pointer;
+                outline: none;
+                border: 1px solid lightgray;
+                border-radius:.5rem;
+            }
+        </style>
+        <div>
+            <strong>HP</strong>
+            <em>Rs. 50,000</em>
+            <input type="button" value="Add to cart">
+        </div>
+        <div>
+            <strong>Dell</strong>
+            <em>Rs. 60,000</em>
+            <input type="button" value="Add to cart">
+        </div>
+        <div>
+            <strong>Lenovo</strong>
+            <em>Rs. 40,000</em>
+            <input type="button" value="Add to cart">
+        </div>
+        <script>
+            btn = document.querySelectorAll('input')
+            for(i=0;i<btn.length;i++)
+            {
+                btn[i].onclick = (event) => {
+                    event.target.disabled = true
+                    event.target.value = 'Item added to cart'
+                    event.target.style.backgroundColor = 'orange'
+                    var price = event.target.previousElementSibling
+                    var name = price.previousElementSibling
+                    price = price.cloneNode(true)
+                    name = name.cloneNode(true)
+                    var product = document.createElement('div')
+                    product.appendChild(name)
+                    product.appendChild(price)
+                    quantity = document.createElement('input')
+                    quantity.setAttribute('type','number')
+                    quantity.setAttribute('min','1')
+                    quantity.setAttribute('max','5')
+                    remove = document.createElement('input')
+                    remove.setAttribute('type','button')
+                    remove.setAttribute('value','Remove')
+                    product.appendChild(quantity)
+                    product.appendChild(remove)
+                    console.log(product)
+                    localStorage.setItem('product',product.outerHTML)
+                }
+            }
+        </script>
+    </body>
+</html>

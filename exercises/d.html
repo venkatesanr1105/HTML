@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart page</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        if(localStorage.getItem('product'))
+        {
+            const parser = new DOMParser()
+            divElement = document.querySelector('div')
+            tag = localStorage.getItem('product')
+            element = parser.parseFromString(tag,'text/html')
+            divElement.appendChild(element.body.firstElementChild)
+        }
+    </script>
+</body>
+</html>
